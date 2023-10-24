@@ -1,0 +1,15 @@
+### GENERAL ###
+namespace: support
+
+app:
+  replicaCount: 1
+  image: mysql:latest
+  env:
+    name: coreos
+    password: secret
+
+service:
+  port: 3306
+
+volume:
+  hostPath: /opt/volumes/mysql

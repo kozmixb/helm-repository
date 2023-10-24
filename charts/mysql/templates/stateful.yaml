@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "app.name" . }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  serviceName: {{ include "app.name" . }}
+  replicas: {{ .Values.app.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "app.selectorLabels" . | nindent 6 }}
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        {{- include "app.selectorLabels" . | nindent 8 }}
+    spec:
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: pvc-mysql-data
+      containers:
+        - name: mysql
+          image: "{{ .Values.app.image }}"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: MYSQL_USER
+              value: {{ .Values.app.env.name | quote}}
+            - name: MYSQL_PASSWORD
+              value: {{ .Values.app.env.password | quote}}
+            - name: MYSQL_RANDOM_ROOT_PASSWORD
+              value: "yes"
+          ports:
+            - containerPort: 3306
+              protocol: TCP
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/mysql
+          readinessProbe:
+            tcpSocket:
+              port: 3306
+            initialDelaySeconds: 300
+            periodSeconds: 300
+          livenessProbe:
+            tcpSocket:
+              port: 3306
+            initialDelaySeconds: 300
+            periodSeconds: 300

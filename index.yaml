@@ -27,4 +27,19 @@ entries:
     urls:
     - mysql-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-25T17:25:12.735740621Z"
+  nfs-server:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-10-25T22:24:05.918311124Z"
+    description: NFS server chart
+    digest: ea1f1b7010e225edbe8b18c6eb30f627ee0ec8ad5564fad5753a251ece19da61
+    keywords:
+    - nfs
+    - share
+    - server
+    name: nfs-server
+    type: application
+    urls:
+    - nfs-server-0.0.2.tgz
+    version: 0.0.2
+generated: "2023-10-25T22:24:05.918323824Z"

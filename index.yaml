@@ -1,0 +1,17 @@
+apiVersion: v1
+entries:
+  mysql:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-10-25T00:08:12.45936778Z"
+    description: Simple mysql chart
+    digest: 872c1e51d40988f1e0b57fdc86466c16c92713ae6dc5800e5a4037fac83d7ded
+    keywords:
+    - mysql
+    - sql
+    name: mysql
+    type: application
+    urls:
+    - mysql-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-10-25T00:08:12.45937318Z"

@@ -3,7 +3,10 @@ namespace: support
 
 app:
   replicaCount: 1
-  image: mysql:latest
+  image:
+    repository: mysql
+    tag: latest
+    pullPolicy: IfNotPresent
   env:
     name: coreos
     password: secret
@@ -12,4 +15,4 @@ service:
   port: 3306
 
 volume:
-  hostPath: /opt/volumes/mysql
+  hostPath: /mnt/mysql-data

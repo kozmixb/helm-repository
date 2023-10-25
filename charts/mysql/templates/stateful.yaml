@@ -26,8 +26,10 @@ spec:
             claimName: pvc-mysql-data
       containers:
         - name: mysql
-          image: "{{ .Values.app.image }}"
-          imagePullPolicy: IfNotPresent
+          {{- with .Values.app.image }}
+          image: "{{ .repository }}:{{ .tag }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
           env:
             - name: MYSQL_USER
               value: {{ .Values.app.env.name | quote}}

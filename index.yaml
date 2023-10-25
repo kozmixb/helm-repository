@@ -3,6 +3,19 @@ entries:
   mysql:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-10-25T17:25:12.73559902Z"
+    description: Simple mysql chart
+    digest: 37c25f4165d6c1ca354bbb6d6250399a6b5b4e52079ae418ec367e9ea443d0a0
+    keywords:
+    - mysql
+    - sql
+    name: mysql
+    type: application
+    urls:
+    - mysql-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-10-25T00:08:12.45936778Z"
     description: Simple mysql chart
     digest: 872c1e51d40988f1e0b57fdc86466c16c92713ae6dc5800e5a4037fac83d7ded
@@ -14,4 +27,4 @@ entries:
     urls:
     - mysql-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-25T00:08:12.45937318Z"
+generated: "2023-10-25T17:25:12.735740621Z"

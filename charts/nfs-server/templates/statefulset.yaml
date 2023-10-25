@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ include "app.name" . }}
+  namespace: {{ .Values.namespace }}
   labels:
     {{- include "app.labels" . | nindent 4 }}
 spec:
@@ -28,52 +29,13 @@ spec:
             - name: nfs-udp
               containerPort: 2049
               protocol: UDP
-            - name: nlockmgr
-              containerPort: 32803
-              protocol: TCP
-            - name: nlockmgr-udp
-              containerPort: 32803
-              protocol: UDP
-            - name: mountd
-              containerPort: 20048
-              protocol: TCP
-            - name: mountd-udp
-              containerPort: 20048
-              protocol: UDP
-            - name: rquotad
-              containerPort: 875
-              protocol: TCP
-            - name: rquotad-udp
-              containerPort: 875
-              protocol: UDP
-            - name: rpcbind
-              containerPort: 111
-              protocol: TCP
-            - name: rpcbind-udp
-              containerPort: 111
-              protocol: UDP
-            - name: statd
-              containerPort: 662
-              protocol: TCP
-            - name: statd-udp
-              containerPort: 662
-              protocol: UDP
           {{- with .Values.securityContext }}
           securityContext:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          env:
-            - name: POD_IP
-              valueFrom:
-                fieldRef:
-                  fieldPath: status.podIP
-            - name: SERVICE_NAME
-              value: {{ include "app.name" . }}
-            - name: POD_NAMESPACE
-              value: {{ .Values.namespace }}
           volumeMounts:
             - name: data
-              mountPath: /export
+              mountPath: /nfs-share
       priorityClassName: {{ include "app.name" . | quote }}
       volumes:
         - name: data

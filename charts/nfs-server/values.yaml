@@ -3,8 +3,8 @@ namespace: support
 
 replicaCount: 1
 image:
-  repository: registry.k8s.io/sig-storage/nfs-provisioner
-  tag: v4.0.0
+  repository: gists/nfs-server
+  tag: latest
   pullPolicy: IfNotPresent
 
 service:
@@ -13,8 +13,8 @@ service:
 securityContext:
   capabilities:
     add:
-      - DAC_READ_SEARCH
-      - SYS_RESOURCE
+      - SYS_ADMIN
+      - SETPCAP
 
 volume:
   hostPath: /mnt/nfs

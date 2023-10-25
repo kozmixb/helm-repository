@@ -35,6 +35,8 @@ spec:
               value: {{ .Values.app.env.password | quote}}
             - name: MYSQL_RANDOM_ROOT_PASSWORD
               value: "yes"
+          securityContext:
+            privileged: true
           ports:
             - containerPort: 3306
               protocol: TCP

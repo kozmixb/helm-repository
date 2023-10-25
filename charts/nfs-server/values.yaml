@@ -1,0 +1,20 @@
+### GENERAL ###
+namespace: support
+
+replicaCount: 1
+image:
+  repository: registry.k8s.io/sig-storage/nfs-provisioner
+  tag: v4.0.0
+  pullPolicy: IfNotPresent
+
+service:
+  port: 2049
+
+securityContext:
+  capabilities:
+    add:
+      - DAC_READ_SEARCH
+      - SYS_RESOURCE
+
+volume:
+  hostPath: /mnt/nfs

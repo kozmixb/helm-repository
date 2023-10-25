@@ -22,7 +22,7 @@ metadata:
   labels:
     {{- include "app.labels" . | nindent 4 }}
 spec:
-  volumeName: pv-mysql-data
+  volumeName: pv-nfs-data
   storageClassName: hostpath
   accessModes:
     - ReadWriteMany

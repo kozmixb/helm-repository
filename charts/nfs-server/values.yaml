@@ -3,7 +3,7 @@ namespace: support
 
 replicaCount: 1
 image:
-  repository: gists/nfs-server
+  repository: erichough/nfs-server
   tag: latest
   pullPolicy: IfNotPresent
 

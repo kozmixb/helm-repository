@@ -36,8 +36,17 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /nfs-share
+            - name: config
+              mountPath: /etc/exports
+              subPath: exports
       priorityClassName: {{ include "app.name" . | quote }}
       volumes:
         - name: data
           persistentVolumeClaim:
             claimName: pvc-nfs-data
+        - name: config
+          configMap:
+            name: {{ include "app.name" . }}-exports
+            items:
+              - key: exports
+                path: exports

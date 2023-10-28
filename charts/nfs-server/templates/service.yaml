@@ -8,13 +8,13 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: 2049
+    - port: 2049
+      targetPort: nfs-tcp
       protocol: TCP
       name: nfs-tcp
-    - port: {{ .Values.service.port }}
-      targetPort: 2049
-      protocol: UDP
-      name: nfs-udp
+    - port: 111
+      targetPort: rpc-tcp
+      protocol: TCP
+      name: rpc-tcp
   selector:
     {{- include "app.selectorLabels" . | nindent 4 }}

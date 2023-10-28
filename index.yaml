@@ -30,6 +30,20 @@ entries:
   nfs-server:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-10-28T16:41:10.251624416Z"
+    description: NFS server chart
+    digest: ab2f02e5f2a2953688624237e0a705fe89e63ed9fe810436307f91edbe712dca
+    keywords:
+    - nfs
+    - share
+    - server
+    name: nfs-server
+    type: application
+    urls:
+    - nfs-server-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-10-26T21:31:33.496791472Z"
     description: NFS server chart
     digest: 40639682c526bca9c369c9d0c7414405ab01a30e400967ad360f7c2d7e4805c0
@@ -56,4 +70,4 @@ entries:
     urls:
     - nfs-server-0.0.2.tgz
     version: 0.0.2
-generated: "2023-10-26T21:31:33.496803972Z"
+generated: "2023-10-28T16:41:10.251715418Z"

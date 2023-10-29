@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ include "app.name" . }}-media
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  storageClassName: hostpath
+  capacity:
+    storage: 1.5Ti
+  accessModes:
+    - ReadOnlyMany
+  hostPath:
+    path: {{ .Values.volumes.mediaPath }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "app.name" . }}-media-claim
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  volumeName: {{ include "app.name" . }}-media
+  storageClassName: hostpath
+  accessModes:
+    - ReadOnlyMany
+  resources:
+    requests:
+      storage: 1.5Ti

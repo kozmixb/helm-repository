@@ -1,5 +1,20 @@
 apiVersion: v1
 entries:
+  jellyfin:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-10-29T11:51:55.153546339Z"
+    description: Jellyfin media server
+    digest: ffba2aa81969f80721e7f70249220809e2a4d5a4e5bae25d62ddf17f804c3ade
+    keywords:
+    - jellyfin
+    - media
+    - server
+    name: jellyfin
+    type: application
+    urls:
+    - jellyfin-0.1.0.tgz
+    version: 0.1.0
   mysql:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -70,4 +85,4 @@ entries:
     urls:
     - nfs-server-0.0.2.tgz
     version: 0.0.2
-generated: "2023-10-28T16:41:10.251715418Z"
+generated: "2023-10-29T11:51:55.153557339Z"

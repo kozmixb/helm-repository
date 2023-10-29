@@ -1,0 +1,17 @@
+### GENERAL ###
+namespace: jellyfin
+
+app:
+  replicaCount: 1
+  image:
+    repository: jellyfin/jellyfin
+    tag: latest
+    pullPolicy: IfNotPresents
+
+volumes:
+  configPath: /mnt/jellyfin/config
+  cachePath: /mnt/jellyfin/cache
+  mediaPath: /mnt/media
+
+gpu:
+  device: /dev/renderD128

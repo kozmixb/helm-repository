@@ -3,7 +3,7 @@ app:
   image:
     repository: jellyfin/jellyfin
     tag: latest
-    pullPolicy: IfNotPresents
+    pullPolicy: IfNotPresent
 
 volumes:
   configPath: /mnt/jellyfin/config

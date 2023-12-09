@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ include "app.name" . }}
-  namespace: {{ .Values.namespace }}
   labels:
     {{- include "app.labels" . | nindent 4 }}
 spec:

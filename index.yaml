@@ -2,6 +2,20 @@ apiVersion: v1
 entries:
   jellyfin:
   - apiVersion: v2
+    appVersion: 1.18.0
+    created: "2023-12-09T17:49:43.934039446Z"
+    description: Jellyfin media server
+    digest: fd9a4e128857ab04dc5097e3f22fc554416d38f4c7d23b321830a909328909e2
+    keywords:
+    - jellyfin
+    - media
+    - server
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/kozmixb/helm-repository/releases/download/jellyfin-0.3.0/jellyfin-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     appVersion: 1.17.0
     created: "2023-12-09T17:24:03.008571656Z"
     description: Jellyfin media server
@@ -126,4 +140,4 @@ entries:
     urls:
     - nfs-server-0.0.2.tgz
     version: 0.0.2
-generated: "2023-12-09T17:24:03.008592385Z"
+generated: "2023-12-09T17:49:43.934076245Z"

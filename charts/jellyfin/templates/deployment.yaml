@@ -37,3 +37,5 @@ spec:
               mountPath: /config
             - name: media
               mountPath: /media
+          securityContext:
+            privileged: true

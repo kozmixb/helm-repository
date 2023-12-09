@@ -17,6 +17,19 @@ entries:
     version: 0.1.0
   mysql:
   - apiVersion: v2
+    appVersion: 1.17.0
+    created: "2023-12-09T16:56:37.38609688Z"
+    description: Simple mysql chart
+    digest: f30802a904aef2f9b8e38741a1676dfed58470b919e027c521e54d86b63944e8
+    keywords:
+    - mysql
+    - sql
+    name: mysql
+    type: application
+    urls:
+    - https://github.com/kozmixb/helm-repository/releases/download/mysql-0.2.0/mysql-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 1.16.0
     created: "2023-10-25T17:25:12.73559902Z"
     description: Simple mysql chart
@@ -43,6 +56,20 @@ entries:
     - mysql-0.1.0.tgz
     version: 0.1.0
   nfs-server:
+  - apiVersion: v2
+    appVersion: 1.17.0
+    created: "2023-12-09T16:56:37.542090143Z"
+    description: NFS server chart
+    digest: f0469a35724553ca9e2bb0b1193482fd3a494873fecb23debbe476ee267e9470
+    keywords:
+    - nfs
+    - share
+    - server
+    name: nfs-server
+    type: application
+    urls:
+    - https://github.com/kozmixb/helm-repository/releases/download/nfs-server-0.2.0/nfs-server-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2023-10-28T16:41:10.251624416Z"
@@ -85,4 +112,4 @@ entries:
     urls:
     - nfs-server-0.0.2.tgz
     version: 0.0.2
-generated: "2023-10-29T11:51:55.153557339Z"
+generated: "2023-12-09T16:56:37.54212058Z"
